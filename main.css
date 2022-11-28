@@ -1,0 +1,747 @@
+/*!********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/stylesheets/main.scss ***!
+  \********************************************************************************************************************/
+:root {
+  --clr-primary-200: hsl(192deg, 70%, 51%);
+  --clr-primary-300: hsl(136deg, 65%, 51%);
+  --clr-primary-800: hsl(233deg, 26%, 24%);
+  --clr-neutral-100: hsl(0deg, 0%, 100%);
+  --clr-neutral-200: hsl(0deg, 0%, 98%);
+  --clr-neutral-300: hsl(220deg, 16%, 96%);
+  --clr-neutral-400: hsl(232deg, 35%, 92%);
+  --clr-neutral-600: hsl(233deg, 8%, 62%);
+}
+
+:root {
+  --fs-100: 0.625rem;
+  --fs-200: 0.78125rem;
+  --fs-300: 0.875rem;
+  --fs-400: 0.9375rem;
+  --fs-500: 1.1875rem;
+  --fs-600: 1.953rem;
+  --fs-700: 2rem;
+  --fs-800: 2.625rem;
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-bold: 700;
+}
+@media (min-width: 64rem) {
+  :root {
+    --fs-100: 0.625rem;
+    --fs-200: 0.8125rem;
+    --fs-300: 0.9375rem;
+    --fs-400: 1.0625rem;
+    --fs-500: 1.4375rem;
+    --fs-600: 2.827rem;
+    --fs-700: 2.4375rem;
+    --fs-800: 3.5625rem;
+  }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--clr-neutral-200);
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: var(--clr-primary-400);
+  text-decoration: none;
+}
+a:hover, a:active, a:focus, a:focus-within {
+  color: var(--clr-primary-300);
+}
+
+section {
+  display: grid;
+  margin-inline: auto;
+  margin-bottom: 5.5rem;
+  padding-inline: 1.5rem;
+}
+@media (min-width: 64rem) {
+  section {
+    padding-top: 5.625rem;
+    padding-inline: clamp(1.5rem, 23vw - 10rem, 10.3125rem);
+    margin-bottom: 0;
+  }
+}
+
+.home {
+  position: relative;
+  max-width: 90rem;
+  margin-inline: auto;
+  overflow: hidden;
+}
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 18.75rem;
+  background-image: url(assets/image-mockups.png);
+  background-size: 92%;
+  background-position-x: center;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+}
+@media (min-width: 64rem) {
+  .home::before {
+    top: -13.5%;
+    left: 56%;
+    width: 50%;
+    aspect-ratio: 2/3;
+    background-size: 105%;
+    background-position-x: left;
+    background-position-y: bottom;
+  }
+}
+
+body {
+  color: var(--clr-neutral-600);
+  font-family: "Public Sans", sans-serif;
+  font-size: var(--fs-300);
+}
+
+.h1 {
+  color: var(--clr-primary-800);
+  font-size: var(--fs-800);
+  font-weight: var(--fw-light);
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+}
+
+.h2 {
+  color: var(--clr-primary-800);
+  font-size: var(--fs-700);
+  font-weight: var(--fw-light);
+  line-height: 1.2;
+}
+
+.h3 {
+  color: var(--clr-primary-800);
+  font-size: var(--fs-500);
+  font-weight: var(--fw-light);
+}
+.h3--small {
+  font-size: var(--fs-400);
+  font-weight: var(--fw-light);
+}
+
+.subtitle {
+  font-size: var(--fs-400);
+  line-height: 165%;
+}
+
+.button {
+  color: var(--clr-neutral-200);
+}
+
+.feature__text {
+  line-height: 1.7;
+}
+
+.article__author {
+  font-size: var(--fs-100);
+}
+.article__text {
+  font-size: var(--fs-200);
+}
+
+.nav__link {
+  font-size: var(--fs-500);
+  color: var(--clr-primary-800);
+}
+@media (min-width: 64rem) {
+  .nav__link {
+    font-size: var(--fs-300);
+  }
+}
+.nav__link:hover, .nav__link:active, .nav__link:focus, .nav__link:focus-within {
+  color: var(--clr-primary-800);
+}
+@media (min-width: 64rem) {
+  .nav__link {
+    color: var(--clr-neutral-800);
+  }
+}
+.nav--footer {
+  color: var(--clr-neutral-400);
+}
+
+.footer {
+  background-color: var(--clr-primary-800);
+}
+.footer__container {
+  display: grid;
+  justify-items: center;
+  gap: 2.1875rem;
+  padding-block: 2.1875rem;
+}
+@media (min-width: 64rem) {
+  .footer__container {
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: start;
+    max-width: 90rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.5rem, 23vw - 10rem, 10.3125rem);
+    padding-block: 3.125rem;
+  }
+}
+.footer__column {
+  display: grid;
+}
+@media (min-width: 64rem) {
+  .footer__column:first-child {
+    justify-self: start;
+  }
+}
+@media (min-width: 64rem) {
+  .footer__column:last-child {
+    justify-self: end;
+  }
+}
+.footer__column:last-child > * {
+  justify-self: center;
+}
+@media (min-width: 64rem) {
+  .footer__column:last-child > * {
+    justify-self: end;
+  }
+}
+@media (min-width: 64rem) {
+  .footer__column--big {
+    grid-column: span 2;
+  }
+}
+.footer__logo {
+  margin-inline: auto;
+}
+@media (min-width: 64rem) {
+  .footer__logo {
+    margin: 0;
+  }
+}
+.footer .links {
+  display: flex;
+  gap: 0.9375rem;
+  margin-top: 2.1875rem;
+}
+@media (min-width: 64rem) {
+  .footer .links {
+    gap: 0.625rem;
+  }
+}
+.footer .links__img:hover, .footer .links__img:active, .footer .links__img:focus, .footer .links__img:focus-within {
+  filter: brightness(0) saturate(100%) invert(69%) sepia(36%) saturate(870%) hue-rotate(81deg) brightness(91%) contrast(93%);
+}
+.footer .links__item img {
+  width: 1.4375rem;
+}
+.footer .copyright {
+  margin-top: 2.1875rem;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: var(--clr-neutral-100);
+  box-shadow: 0 -9px 15px 0px var(--clr-primary-800);
+}
+@media (min-width: 64rem) {
+  .header {
+    box-shadow: none;
+  }
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 5rem;
+  max-width: 90rem;
+  padding-inline: clamp(1.5rem, 23vw - 10rem, 10.3125rem);
+}
+@media (max-width: 64rem) {
+  .header .container {
+    justify-content: space-between;
+    min-height: 4rem;
+    padding-inline: 1.5rem 1.125rem;
+  }
+}
+
+@media (max-width: 64rem) {
+  .mobile-menu {
+    max-height: 0.75rem;
+  }
+  .mobile-menu:not([open]) > img:nth-child(2) {
+    display: none;
+  }
+  .mobile-menu[open] > img:first-child {
+    display: none;
+  }
+  .mobile-menu[open] ~ .nav {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background-image: linear-gradient(rgba(45, 49, 77, 0.97), rgba(45, 49, 77, 0.97) 10%, rgba(250, 250, 250, 0.1));
+  }
+  .mobile-menu[open] ~ .nav .nav__list {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 40vh;
+    margin: 1.5625rem;
+    padding-block: 1.25rem;
+    border-radius: 5px;
+    background-color: var(--clr-neutral-200);
+  }
+}
+
+.button {
+  border: none;
+}
+.button--menu {
+  display: grid;
+  align-content: center;
+  background-color: transparent;
+}
+.button--cta {
+  height: min-content;
+  padding: 0.75rem 2.1875rem;
+  border-radius: 10rem;
+  background: linear-gradient(0.25turn, hsl(136deg, 65%, 51%), hsl(192deg, 70%, 51%));
+}
+.button--cta:hover, .button--cta:active, .button--cta:focus, .button--cta:focus-within {
+  cursor: pointer;
+  background: linear-gradient(0.25turn, #70e18e, #6ccde5);
+}
+
+.feature {
+  display: grid;
+  justify-items: center;
+  gap: 1.5625rem;
+}
+@media (min-width: 48rem) {
+  .feature {
+    flex-basis: 40%;
+    margin-inline: auto;
+  }
+}
+@media (min-width: 64rem) {
+  .feature {
+    justify-items: flex-start;
+    gap: 2.3125rem;
+    flex-basis: 25%;
+  }
+}
+.feature__text {
+  margin-top: -0.5rem;
+}
+@media (min-width: 64rem) {
+  .feature__text {
+    margin-top: -0.875rem;
+  }
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: var(--clr-neutral-100);
+}
+.article__img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+@media (min-width: 64rem) {
+  .article__img {
+    min-height: 52.5%;
+  }
+}
+.article__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.375rem;
+  width: 82%;
+  margin-top: 27px;
+  margin-inline: auto;
+}
+
+.nav {
+  width: 31%;
+  margin-left: 2.1875rem;
+}
+@media (max-width: 64rem) {
+  .nav {
+    margin: 0;
+  }
+}
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 64rem) {
+  .nav__list {
+    display: grid;
+    justify-content: center;
+  }
+}
+.nav__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 5rem;
+  padding-inline: 0.3125rem;
+}
+@media (max-width: 64rem) {
+  .nav__link {
+    min-height: 0;
+  }
+}
+.nav__link:hover::after, .nav__link:active::after, .nav__link:focus::after, .nav__link:focus-within::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50% 0;
+  height: 4px;
+  width: 100%;
+  background-image: linear-gradient(0.25turn, var(--clr-primary-300), var(--clr-primary-200));
+}
+@media (max-width: 64rem) {
+  .nav__link:hover::after, .nav__link:active::after, .nav__link:focus::after, .nav__link:focus-within::after {
+    content: none;
+  }
+}
+@media (min-width: 64rem) {
+  .nav--footer {
+    margin: 0;
+  }
+}
+.nav--footer__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+@media (min-width: 64rem) {
+  .nav--footer__list {
+    height: 6.25rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.75rem 7.8125rem;
+  }
+}
+
+.hero {
+  gap: 1.375rem;
+  padding: 0;
+}
+@media (min-width: 64rem) {
+  .hero {
+    grid-template-columns: 0.37fr 0.63fr;
+    grid-template-areas: "column-1  column-2";
+    padding-right: 0;
+    padding-left: clamp(1.5rem, 23vw - 10rem, 10.3125rem);
+  }
+}
+.hero__bg {
+  width: 100%;
+  min-height: 18.75rem;
+  overflow: hidden;
+  background-image: url(assets/bg-intro-mobile.svg);
+  background-size: 100%;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
+@media (min-width: 64rem) {
+  .hero__bg {
+    grid-area: column-2;
+    min-height: 40.625rem;
+    background-image: url(assets/bg-intro-desktop.svg);
+    background-size: 170%;
+    background-position-x: 5%;
+    background-position-y: 62%;
+    overflow: visible;
+  }
+}
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+@media (min-width: 64rem) {
+  .hero__content {
+    grid-area: column-1;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.5625rem;
+    margin-top: 0.625rem;
+  }
+}
+.hero .h1 {
+  width: fit-content;
+}
+.hero .subtitle {
+  padding-inline: 1.5rem;
+}
+@media (min-width: 64rem) {
+  .hero .subtitle {
+    padding: 0 1.875rem 0 0;
+  }
+}
+.hero button {
+  margin-top: 0.625rem;
+}
+@media (min-width: 64rem) {
+  .hero button {
+    margin-top: 0.5rem;
+  }
+}
+
+.features {
+  gap: 3.4375rem;
+  padding-bottom: 4.125rem;
+  background-color: var(--clr-neutral-300);
+}
+@media (min-width: 64rem) {
+  .features {
+    gap: 4.375rem;
+    padding-bottom: 6.5625rem;
+  }
+}
+.features__titles {
+  display: grid;
+  gap: 1rem;
+  margin-top: 3.875rem;
+}
+@media (min-width: 64rem) {
+  .features__titles {
+    max-width: 55%;
+    gap: 1.5rem;
+    margin-top: 1.25rem;
+  }
+}
+.features__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.0625rem;
+}
+@media (min-width: 48rem) {
+  .features__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 64rem) {
+  .features__list {
+    flex-wrap: nowrap;
+    gap: 1.875rem;
+  }
+}
+
+.latest-articles {
+  gap: 1.875rem;
+}
+@media (min-width: 64rem) {
+  .latest-articles {
+    gap: 3.125rem;
+    margin-bottom: 6.0625rem;
+  }
+}
+.latest-articles .articles {
+  display: grid;
+  gap: 1.5625rem;
+}
+@media (min-width: 48rem) {
+  .latest-articles .articles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 64rem) {
+  .latest-articles .articles {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+.container {
+  max-width: 90rem; /* 1 */
+  margin-left: auto; /* 2 */
+  margin-right: auto; /* 2 */
+  padding-left: 20px; /* 3 */
+  padding-right: 20px; /* 3 */
+  width: 100%; /* 1 */
+}
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0; /* 1 */
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.show-desktop {
+  display: none;
+}
+@media (min-width: 64rem) {
+  .show-desktop {
+    display: block;
+  }
+}
+
+@media (min-width: 64rem) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+.even-columns {
+  display: grid;
+  grid-auto-columns: auto;
+  grid-auto-rows: auto;
+}
+@media (min-width: 64rem) {
+  .even-columns {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "column-1  column-2";
+  }
+}
+
+@media (max-width: 64rem) {
+  .txt-center-mobile {
+    text-align: center;
+  }
+}
